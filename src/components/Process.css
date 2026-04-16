@@ -1,0 +1,109 @@
+.process {
+  padding: var(--section-padding) 0;
+  background: var(--color-bg-warm);
+}
+
+.process__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.process__header .section-subtitle {
+  margin: 0 auto;
+}
+
+.process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+}
+
+.process-step__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.process-step__number {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.process-step__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 1;
+  transition: all var(--transition-base);
+}
+
+.process-step:hover .process-step__icon {
+  background: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: 0 4px 20px rgba(200, 149, 108, 0.3);
+}
+
+.process-step__connector {
+  position: absolute;
+  top: calc(0.75rem + 12px + 30px);
+  left: calc(50% + 40px);
+  width: calc(100% - 30px);
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-border) 0,
+    var(--color-border) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  z-index: 0;
+}
+
+.process-step__title {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.625rem;
+}
+
+.process-step__desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .process__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  .process-step__connector { display: none; }
+}
+
+@media (max-width: 640px) {
+  .process__steps {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
