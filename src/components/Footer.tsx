@@ -41,13 +41,13 @@ export default function Footer() {
                 <Phone size={16} />
                 <span>0488 890 909</span>
               </a>
-              <a href="mailto:info@oziqualitypaintingservices.com.au" className="footer__contact-item">
+              <a href="mailto:hao@hlpainting.com.au" className="footer__contact-item">
                 <Mail size={16} />
-                <span>info@oziqualitypaintingservices.com.au</span>
+                <span>hao@hlpainting.com.au</span>
               </a>
               <div className="footer__contact-item">
                 <Clock size={16} />
-                <span>Mon – Fri: 9 AM – 5 PM</span>
+                <span>Mon – Fri: 7 AM – 5 PM</span>
               </div>
               <div className="footer__contact-item">
                 <MapPin size={16} />
