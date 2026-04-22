@@ -18,18 +18,11 @@
   margin-bottom: 1rem;
 }
 
-.footer__logo-icon {
+.footer__logo-img {
   width: 40px;
   height: 40px;
-  background: var(--color-accent);
-  color: var(--color-white);
   border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
+  object-fit: contain;
 }
 
 .footer__logo-name {

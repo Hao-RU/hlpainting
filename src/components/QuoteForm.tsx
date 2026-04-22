@@ -1,6 +1,16 @@
 import { useState, type FormEvent } from 'react';
+import emailjs from '@emailjs/browser';
 import { Send, CheckCircle } from 'lucide-react';
 import './QuoteForm.css';
+
+// TODO: Replace these with your actual EmailJS credentials
+// 1. Sign up at https://www.emailjs.com (free: 200 emails/month)
+// 2. Add an Email Service (Gmail, Outlook, etc.) → copy Service ID
+// 3. Create a Template with variables: {{name}}, {{email}}, {{phone}}, {{service}}, {{message}} → copy Template ID
+// 4. Copy your Public Key from Account → API Keys
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY = 'Oyl839FRPwpII3VFaeQoS';
 
 const serviceOptions = [
   'Residential Painting',
@@ -13,6 +23,8 @@ const serviceOptions = [
 
 export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,9 +37,30 @@ export default function QuoteForm() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError('');
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
+      setSubmitted(true);
+    } catch {
+      setError('Something went wrong. Please try again or call us directly.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -60,7 +93,7 @@ export default function QuoteForm() {
 
             <div className="quote__contact-info">
               <p>Prefer to call?</p>
-              <a href="tel:0450936281" className="quote__phone">0450 936 281</a>
+              <a href="tel:0488890909" className="quote__phone">0488 890 909</a>
             </div>
           </div>
 
@@ -141,9 +174,10 @@ export default function QuoteForm() {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary quote__submit">
-                  Request Free Quote
-                  <Send size={16} />
+                {error && <p className="quote__error">{error}</p>}
+                <button type="submit" className="btn btn-primary quote__submit" disabled={sending}>
+                  {sending ? 'Sending...' : 'Request Free Quote'}
+                  {!sending && <Send size={16} />}
                 </button>
               </form>
             )}

@@ -1,5 +1,6 @@
 import { ArrowRight, Star, Shield, Clock, Award } from 'lucide-react';
 import './Hero.css';
+import heroImg from '../assets/Frontpage.png';
 
 export default function Hero() {
   return (
@@ -54,27 +55,7 @@ export default function Hero() {
 
         <div className="hero__visual">
           <div className="hero__card hero__card--main">
-            <div className="hero__card-img" />
-            <div className="hero__card-overlay">
-              <div className="hero__stats">
-                <div className="hero__stat">
-                  <span className="hero__stat-number">500+</span>
-                  <span className="hero__stat-label">Projects Completed</span>
-                </div>
-                <div className="hero__stat-divider" />
-                <div className="hero__stat">
-                  <span className="hero__stat-number">4.9</span>
-                  <span className="hero__stat-label">
-                    <span className="hero__stars">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} size={12} fill="currentColor" />
-                      ))}
-                    </span>
-                    Client Rating
-                  </span>
-                </div>
-              </div>
-            </div>
+            <img src={heroImg} alt="HL Painting project" className="hero__card-img" />
           </div>
           <div className="hero__floating-card">
             <div className="hero__floating-icon">

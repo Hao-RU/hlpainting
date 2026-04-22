@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import './Navbar.css';
+import logo from '../assets/companylogo_transparent.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,10 +35,10 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         <a href="#" className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <span className="navbar__logo-icon">OQP</span>
+          <img src={logo} alt="HL Painting" className="navbar__logo-img" />
           <div className="navbar__logo-text">
-            <span className="navbar__logo-name">Hao's it goin mate</span>
-            <span className="navbar__logo-sub">Painting Services</span>
+            <span className="navbar__logo-name">HL Painting</span>
+            <span className="navbar__logo-sub">Residential & Commercial Painting Specialist</span>
           </div>
         </a>
 
@@ -50,9 +51,9 @@ export default function Navbar() {
         </ul>
 
         <div className="navbar__actions">
-          <a href="tel:0450936281" className="navbar__phone">
+          <a href="tel:0488890909" className="navbar__phone">
             <Phone size={16} />
-            <span>0450 936 281</span>
+            <span>0488 890 909</span>
           </a>
           <a href="#quote" className="btn btn-primary navbar__cta" onClick={(e) => { e.preventDefault(); handleNav('#quote'); }}>
             Get Free Quote
@@ -77,9 +78,9 @@ export default function Navbar() {
           ))}
         </ul>
         <div className="navbar__mobile-actions">
-          <a href="tel:0450936281" className="navbar__phone">
+          <a href="tel:0488890909" className="navbar__phone">
             <Phone size={18} />
-            <span>0450 936 281</span>
+            <span>0488 890 909</span>
           </a>
           <a href="#quote" className="btn btn-primary" style={{ width: '100%' }} onClick={(e) => { e.preventDefault(); handleNav('#quote'); }}>
             Get Free Quote

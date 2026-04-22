@@ -133,6 +133,12 @@
   padding-right: 2.5rem;
 }
 
+.quote__error {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
 .quote__submit {
   width: 100%;
   padding: 1rem;

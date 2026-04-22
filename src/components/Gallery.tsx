@@ -1,12 +1,16 @@
 import './Gallery.css';
+import exteriorImg from '../assets/exteriorpainting1.JPEG';
+import interiorImg from '../assets/interiorpainting1.png';
+import commercialExtImg from '../assets/Commercialexterior1.JPEG';
+import commercialIntImg from '../assets/Commercialinterior1.JPEG';
+import roofImg from '../assets/roofpainting.png';
 
 const projects = [
-  { label: 'Residential Interior', color: '#E8DDD4', accent: '#C8956C' },
-  { label: 'Modern Kitchen', color: '#D4DDE8', accent: '#6C8DC8' },
-  { label: 'Heritage Exterior', color: '#DDE8D4', accent: '#7CA868' },
-  { label: 'Office Fitout', color: '#E4D4E8', accent: '#9C6CB8' },
-  { label: 'Strata Complex', color: '#E8E0D4', accent: '#B8946C' },
-  { label: 'Epoxy Garage Floor', color: '#D4E2E8', accent: '#6CA8B8' },
+  { label: 'Residential Exterior', image: exteriorImg },
+  { label: 'Residential Interior', image: interiorImg },
+  { label: 'Commercial Exterior', image: commercialExtImg },
+  { label: 'Commercial Interior', image: commercialIntImg },
+  { label: 'Roof Painting', image: roofImg },
 ];
 
 export default function Gallery() {
@@ -32,16 +36,11 @@ export default function Gallery() {
               <div
                 className="gallery__img"
                 style={{
-                  background: `linear-gradient(135deg, ${p.color} 0%, ${p.accent}33 100%)`,
+                  backgroundImage: `url(${p.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
-              >
-                <div
-                  className="gallery__img-accent"
-                  style={{
-                    background: `radial-gradient(circle at 60% 40%, ${p.accent}44, transparent 70%)`,
-                  }}
-                />
-              </div>
+              />
               <div className="gallery__overlay">
                 <span className="gallery__label">{p.label}</span>
               </div>

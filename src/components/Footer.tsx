@@ -1,5 +1,6 @@
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 import './Footer.css';
+import logo from '../assets/companylogo_transparent.png';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -25,10 +26,10 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <div className="footer__logo">
-              <span className="footer__logo-icon">OQP</span>
+              <img src={logo} alt="HL Painting" className="footer__logo-img" />
               <div>
-                <span className="footer__logo-name">Hao's it goin mate</span>
-                <span className="footer__logo-sub">Painting Services</span>
+                <span className="footer__logo-name">HL Painting</span>
+                <span className="footer__logo-sub">Residential & Commercial Painting Specialist</span>
               </div>
             </div>
             <p className="footer__desc">
@@ -36,9 +37,9 @@ export default function Footer() {
               businesses, and strata properties since 2015.
             </p>
             <div className="footer__contact-list">
-              <a href="tel:0450936281" className="footer__contact-item">
+              <a href="tel:0488890909" className="footer__contact-item">
                 <Phone size={16} />
-                <span>0450 936 281</span>
+                <span>0488 890 909</span>
               </a>
               <a href="mailto:info@oziqualitypaintingservices.com.au" className="footer__contact-item">
                 <Mail size={16} />
@@ -95,7 +96,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {year} Hao's it goin mate Painting Services. All rights reserved.</p>
+          <p>&copy; {year} HL Painting. All rights reserved.</p>
         </div>
       </div>
     </footer>
