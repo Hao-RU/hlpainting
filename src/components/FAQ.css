@@ -39,7 +39,7 @@
 
 .faq__item--open {
   border-color: var(--color-accent);
-  box-shadow: 0 2px 12px rgba(200, 149, 108, 0.08);
+  box-shadow: 0 2px 12px rgba(202, 162, 75, 0.08);
 }
 
 .faq__question {

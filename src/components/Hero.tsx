@@ -55,7 +55,7 @@ export default function Hero() {
 
         <div className="hero__visual">
           <div className="hero__card hero__card--main">
-            <img src={heroImg} alt="HL Painting project" className="hero__card-img" />
+            <img src={heroImg} alt="Polaris Painting & Decorating project" className="hero__card-img" />
           </div>
           <div className="hero__floating-card">
             <div className="hero__floating-icon">

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import './Navbar.css';
-import logo from '../assets/companylogo_transparent.png';
+import logo from '../assets/polaris-google-profile-logo.jpg';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,9 +35,9 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         <a href="#" className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <img src={logo} alt="HL Painting" className="navbar__logo-img" />
+          <img src={logo} alt="Polaris Painting & Decorating" className="navbar__logo-img" />
           <div className="navbar__logo-text">
-            <span className="navbar__logo-name">HL Painting</span>
+            <span className="navbar__logo-name">Polaris Painting & Decorating</span>
             <span className="navbar__logo-sub">Residential & Commercial Painting Specialist</span>
           </div>
         </a>

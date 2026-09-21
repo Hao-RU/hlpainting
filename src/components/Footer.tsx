@@ -1,6 +1,6 @@
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 import './Footer.css';
-import logo from '../assets/companylogo_transparent.png';
+import logo from '../assets/polaris-google-profile-logo.jpg';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -26,9 +26,9 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <div className="footer__logo">
-              <img src={logo} alt="HL Painting" className="footer__logo-img" />
+              <img src={logo} alt="Polaris Painting & Decorating" className="footer__logo-img" />
               <div>
-                <span className="footer__logo-name">HL Painting</span>
+                <span className="footer__logo-name">Polaris Painting & Decorating</span>
                 <span className="footer__logo-sub">Residential & Commercial Painting Specialist</span>
               </div>
             </div>
@@ -41,9 +41,9 @@ export default function Footer() {
                 <Phone size={16} />
                 <span>0488 890 909</span>
               </a>
-              <a href="mailto:hao@hlpainting.com.au" className="footer__contact-item">
+              <a href="mailto:hao@polarispainting.com.au" className="footer__contact-item">
                 <Mail size={16} />
-                <span>hao@hlpainting.com.au</span>
+                <span>hao@polarispainting.com.au</span>
               </a>
               <div className="footer__contact-item">
                 <Clock size={16} />
@@ -96,7 +96,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {year} HL Painting. All rights reserved.</p>
+          <p>&copy; {year} Polaris Painting & Decorating. All rights reserved.</p>
         </div>
       </div>
     </footer>
