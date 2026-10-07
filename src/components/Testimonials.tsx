@@ -1,5 +1,7 @@
 import { Star, Quote } from 'lucide-react';
 import './Testimonials.css';
+import PaintChip from './PaintChip';
+import { WALLS } from '../paintColours';
 
 const testimonials = [
   {
@@ -27,7 +29,8 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="testimonials">
+    <section id="testimonials" className="testimonials" data-wall style={{ background: WALLS.testimonials.hex }}>
+      <PaintChip {...WALLS.testimonials} />
       <div className="container">
         <div className="testimonials__header">
           <div>

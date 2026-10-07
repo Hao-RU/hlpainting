@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import './FAQ.css';
+import PaintChip from './PaintChip';
+import { WALLS } from '../paintColours';
 
 const faqs = [
   {
@@ -45,7 +47,8 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="faq">
+    <section id="faq" className="faq" data-wall style={{ background: WALLS.faq.hex }}>
+      <PaintChip {...WALLS.faq} />
       <div className="container">
         <div className="faq__layout">
           <div className="faq__header">

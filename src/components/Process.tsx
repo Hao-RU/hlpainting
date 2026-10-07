@@ -1,5 +1,7 @@
 import { MessageSquare, MapPin, FileText, ThumbsUp } from 'lucide-react';
 import './Process.css';
+import PaintChip from './PaintChip';
+import { WALLS } from '../paintColours';
 
 const steps = [
   {
@@ -30,7 +32,8 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="process">
+    <section id="process" className="process" data-wall style={{ background: WALLS.process.hex }}>
+      <PaintChip {...WALLS.process} />
       <div className="container">
         <div className="process__header">
           <span className="section-label">How It Works</span>

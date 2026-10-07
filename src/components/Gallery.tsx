@@ -4,6 +4,8 @@ import interiorImg from '../assets/interiorpainting1.png';
 import commercialExtImg from '../assets/Commercialexterior1.JPEG';
 import commercialIntImg from '../assets/Commercialinterior1.JPEG';
 import roofImg from '../assets/roofpainting.png';
+import PaintChip from './PaintChip';
+import { WALLS } from '../paintColours';
 
 const projects = [
   { label: 'Residential Exterior', image: exteriorImg },
@@ -15,7 +17,8 @@ const projects = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="gallery">
+    <section id="gallery" className="gallery" data-wall style={{ background: WALLS.gallery.hex }}>
+      <PaintChip {...WALLS.gallery} />
       <div className="container">
         <div className="gallery__header">
           <div>

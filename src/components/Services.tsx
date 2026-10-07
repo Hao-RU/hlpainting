@@ -1,5 +1,7 @@
 import { Home, Building2, Layers, Paintbrush, Warehouse, Hexagon, ArrowUpRight } from 'lucide-react';
 import './Services.css';
+import PaintChip from './PaintChip';
+import { WALLS } from '../paintColours';
 
 const services = [
   {
@@ -42,7 +44,8 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="services">
+    <section id="services" className="services" data-wall style={{ background: WALLS.services.hex }}>
+      <PaintChip {...WALLS.services} />
       <div className="container">
         <div className="services__header">
           <span className="section-label">What We Do</span>

@@ -1,6 +1,8 @@
 import { useState, type FormEvent } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
 import './QuoteForm.css';
+import PaintChip from './PaintChip';
+import { WALLS } from '../paintColours';
 
 // Submissions go to Netlify Forms. A matching hidden form named "quote" lives in
 // index.html so Netlify can detect the fields at deploy time. View submissions and
@@ -58,7 +60,8 @@ export default function QuoteForm() {
   };
 
   return (
-    <section id="quote" className="quote">
+    <section id="quote" className="quote" data-wall style={{ background: WALLS.quote.hex }}>
+      <PaintChip {...WALLS.quote} />
       <div className="container">
         <div className="quote__wrapper">
           <div className="quote__info">

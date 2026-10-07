@@ -250,3 +250,8 @@
     gap: 0.75rem;
   }
 }
+
+/* Let the Dulux wall colour show through */
+.hero__gradient {
+  background: none;
+}

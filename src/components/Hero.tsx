@@ -1,10 +1,13 @@
 import { ArrowRight, Star, Shield, Clock, Award } from 'lucide-react';
 import './Hero.css';
 import heroImg from '../assets/Frontpage.png';
+import PaintChip from './PaintChip';
+import { WALLS } from '../paintColours';
 
 export default function Hero() {
   return (
-    <section className="hero" id="intro">
+    <section className="hero" id="intro" data-wall style={{ background: WALLS.intro.hex }}>
+      <PaintChip {...WALLS.intro} />
       <div className="hero__bg">
         <div className="hero__gradient" />
       </div>
