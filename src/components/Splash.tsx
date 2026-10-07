@@ -2,7 +2,7 @@ import { ChevronDown } from 'lucide-react';
 import './Splash.css';
 
 // Edit this line to change the slogan on the opening screen.
-const SLOGAN = 'Your fixed point for a flawless finish.';
+const SLOGAN = 'Guided by precision.';
 
 const scrollTo = (selector: string) =>
   document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
