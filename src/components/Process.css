@@ -1,6 +1,6 @@
 .process {
   padding: var(--section-padding) 0;
-  background: var(--color-bg-warm);
+  background: var(--color-bg-deep);
 }
 
 .process__header {
@@ -43,7 +43,8 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--color-white);
+  background: var(--color-surface);
+  border: 1px solid rgba(202, 162, 75, 0.45);
   color: var(--color-accent);
   display: flex;
   align-items: center;
@@ -56,7 +57,7 @@
 
 .process-step:hover .process-step__icon {
   background: var(--color-accent);
-  color: var(--color-white);
+  color: var(--color-primary);
   box-shadow: 0 4px 20px rgba(202, 162, 75, 0.3);
 }
 
@@ -68,8 +69,8 @@
   height: 2px;
   background: repeating-linear-gradient(
     90deg,
-    var(--color-border) 0,
-    var(--color-border) 6px,
+    rgba(202, 162, 75, 0.4) 0,
+    rgba(202, 162, 75, 0.4) 6px,
     transparent 6px,
     transparent 12px
   );
@@ -80,7 +81,7 @@
   font-family: var(--font-serif);
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-heading);
   margin-bottom: 0.625rem;
 }
 

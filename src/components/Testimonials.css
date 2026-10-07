@@ -36,7 +36,7 @@
 }
 
 .testimonial-card__inner {
-  background: var(--color-white);
+  background: var(--color-surface);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -83,8 +83,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--color-primary);
-  color: var(--color-white);
+  background: var(--color-accent);
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +97,7 @@
   display: block;
   font-weight: 600;
   font-size: 0.9375rem;
-  color: var(--color-primary);
+  color: var(--color-heading);
 }
 
 .testimonial-card__location {

@@ -1,16 +1,19 @@
 :root {
-  --color-bg: #FAFAF8;
-  --color-bg-warm: #F5F0EB;
-  --color-bg-card: #FFFFFF;
+  --color-bg: #142540;
+  --color-bg-warm: #182B49;
+  --color-bg-deep: #0F1C31;
+  --color-surface: #1F3456;
+  --color-heading: #FFFFFF;
+  --color-bg-card: #1F3456;
   --color-primary: #182B49;
   --color-accent: #CAA24B;
   --color-accent-hover: #B58F3E;
-  --color-accent-light: rgba(202, 162, 75, 0.1);
-  --color-text: #2D2D2D;
-  --color-text-light: #6B7280;
-  --color-text-muted: #9CA3AF;
-  --color-border: #E8E4DF;
-  --color-border-light: #F0ECE7;
+  --color-accent-light: rgba(255, 255, 255, 0.07);
+  --color-text: #E7EBF1;
+  --color-text-light: #B3BDCB;
+  --color-text-muted: #8591A3;
+  --color-border: #34496C;
+  --color-border-light: #2A3F62;
   --color-white: #FFFFFF;
   --color-success: #16A34A;
   --color-star: #CAA24B;
@@ -18,10 +21,10 @@
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
-  --shadow-sm: 0 1px 2px rgba(24, 43, 73, 0.04);
-  --shadow-md: 0 4px 12px rgba(24, 43, 73, 0.06);
-  --shadow-lg: 0 8px 30px rgba(24, 43, 73, 0.08);
-  --shadow-xl: 0 20px 60px rgba(24, 43, 73, 0.1);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.35);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -46,6 +49,7 @@
 }
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -107,7 +111,7 @@ ul {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-heading);
   line-height: 1.2;
   margin-bottom: 1rem;
 }
@@ -134,7 +138,8 @@ ul {
 
 .btn-primary {
   background: var(--color-accent);
-  color: var(--color-white);
+  color: var(--color-primary);
+  font-weight: 600;
 }
 .btn-primary:hover {
   background: var(--color-accent-hover);
@@ -144,7 +149,7 @@ ul {
 
 .btn-outline {
   background: transparent;
-  color: var(--color-primary);
+  color: var(--color-heading);
   border: 1.5px solid var(--color-border);
 }
 .btn-outline:hover {

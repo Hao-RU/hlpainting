@@ -11,7 +11,7 @@
 }
 
 .quote__info {
-  background: var(--color-primary);
+  background: var(--color-bg-deep);
   padding: clamp(2rem, 4vw, 3.5rem);
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@
 }
 
 .quote__form-wrapper {
-  background: var(--color-white);
+  background: var(--color-surface);
   padding: clamp(2rem, 4vw, 3.5rem);
 }
 
@@ -134,7 +134,7 @@
 }
 
 .quote__error {
-  color: #dc2626;
+  color: #F87171;
   font-size: 0.875rem;
   margin: 0;
 }
@@ -164,7 +164,7 @@
 .quote__success h3 {
   font-family: var(--font-serif);
   font-size: 1.5rem;
-  color: var(--color-primary);
+  color: var(--color-heading);
 }
 
 .quote__success p {
