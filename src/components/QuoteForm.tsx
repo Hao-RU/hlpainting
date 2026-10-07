@@ -1,16 +1,11 @@
 import { useState, type FormEvent } from 'react';
-import emailjs from '@emailjs/browser';
 import { Send, CheckCircle } from 'lucide-react';
 import './QuoteForm.css';
 
-// TODO: Replace these with your actual EmailJS credentials
-// 1. Sign up at https://www.emailjs.com (free: 200 emails/month)
-// 2. Add an Email Service (Gmail, Outlook, etc.) → copy Service ID
-// 3. Create a Template with variables: {{name}}, {{email}}, {{phone}}, {{service}}, {{message}} → copy Template ID
-// 4. Copy your Public Key from Account → API Keys
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY = 'Oyl839FRPwpII3VFaeQoS';
+// Submissions go to Netlify Forms. A matching hidden form named "quote" lives in
+// index.html so Netlify can detect the fields at deploy time. View submissions and
+// set up email notifications in the Netlify dashboard under Forms.
+const FORM_NAME = 'quote';
 
 const serviceOptions = [
   'Residential Painting',
@@ -32,6 +27,7 @@ export default function QuoteForm() {
     service: '',
     message: '',
   });
+  const [botField, setBotField] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -43,18 +39,16 @@ export default function QuoteForm() {
     setError('');
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          service: formData.service,
-          message: formData.message,
-        },
-        EMAILJS_PUBLIC_KEY,
-      );
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': FORM_NAME,
+          'bot-field': botField,
+          ...formData,
+        }).toString(),
+      });
+      if (!res.ok) throw new Error(`Form submission failed: ${res.status}`);
       setSubmitted(true);
     } catch {
       setError('Something went wrong. Please try again or call us directly.');
@@ -108,7 +102,14 @@ export default function QuoteForm() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="quote__form">
+              <form onSubmit={handleSubmit} className="quote__form" name={FORM_NAME}>
+                {/* Spam trap: hidden from people, bots tend to fill it in */}
+                <p hidden>
+                  <label>
+                    Don't fill this out:{' '}
+                    <input name="bot-field" value={botField} onChange={e => setBotField(e.target.value)} />
+                  </label>
+                </p>
                 <div className="quote__field">
                   <label htmlFor="name">Full Name</label>
                   <input
