@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar';
+import Splash from './components/Splash';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Process from './components/Process';
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <>
       <Navbar />
+      <Splash />
       <Hero />
       <Services />
       <Process />

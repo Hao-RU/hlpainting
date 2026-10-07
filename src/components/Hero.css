@@ -1,9 +1,8 @@
 .hero {
   position: relative;
-  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 7rem 0 4rem;
+  padding: var(--section-padding) 0;
   overflow: hidden;
 }
 
@@ -17,9 +16,9 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(202, 162, 75, 0.08), transparent),
-    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(255, 255, 255, 0.03), transparent),
-    linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-warm) 100%);
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(24, 43, 73, 0.03), transparent),
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(24, 43, 73, 0.05), transparent),
+    linear-gradient(180deg, var(--color-bg-warm) 0%, var(--color-bg) 100%);
 }
 
 .hero__content {

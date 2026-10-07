@@ -4,7 +4,7 @@ import heroImg from '../assets/Frontpage.png';
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="intro">
       <div className="hero__bg">
         <div className="hero__gradient" />
       </div>

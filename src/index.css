@@ -1,30 +1,31 @@
 :root {
-  --color-bg: #142540;
-  --color-bg-warm: #182B49;
-  --color-bg-deep: #0F1C31;
-  --color-surface: #1F3456;
-  --color-heading: #FFFFFF;
-  --color-bg-card: #1F3456;
+  --color-bg: #FFFFFF;
+  --color-bg-warm: #F3F5F9;
+  --color-bg-deep: #182B49;
+  --color-surface: #FFFFFF;
+  --color-heading: #182B49;
+  --color-bg-card: #FFFFFF;
   --color-primary: #182B49;
   --color-accent: #CAA24B;
   --color-accent-hover: #B58F3E;
-  --color-accent-light: rgba(255, 255, 255, 0.07);
-  --color-text: #E7EBF1;
-  --color-text-light: #B3BDCB;
-  --color-text-muted: #8591A3;
-  --color-border: #34496C;
-  --color-border-light: #2A3F62;
+  --color-accent-light: rgba(24, 43, 73, 0.06);
+  --color-text: #26303D;
+  --color-text-light: #5B6575;
+  --color-text-muted: #8A93A2;
+  --color-border: #DCE1E9;
+  --color-border-light: #E8ECF2;
   --color-white: #FFFFFF;
   --color-success: #16A34A;
   --color-star: #CAA24B;
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-logo: 'Poppins', 'Inter', sans-serif;
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
-  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 1px 2px rgba(24, 43, 73, 0.05);
+  --shadow-md: 0 4px 12px rgba(24, 43, 73, 0.07);
+  --shadow-lg: 0 8px 30px rgba(24, 43, 73, 0.1);
+  --shadow-xl: 0 20px 60px rgba(24, 43, 73, 0.12);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -49,7 +50,6 @@
 }
 
 html {
-  color-scheme: dark;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

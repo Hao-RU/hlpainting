@@ -32,7 +32,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : 'navbar--top'} ${mobileOpen ? 'navbar--open' : ''}`}>
       <div className="navbar__inner container">
         <a href="#" className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <img src={logo} alt="Polaris Painting & Decorating" className="navbar__logo-img" />

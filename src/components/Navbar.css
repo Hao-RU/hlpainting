@@ -9,7 +9,7 @@
 }
 
 .navbar--scrolled {
-  background: rgba(20, 37, 64, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border-light);
@@ -184,4 +184,24 @@
     justify-content: center;
     padding: 0.75rem;
   }
+}
+
+/* Over the navy opening screen: light text until the user scrolls */
+.navbar--top:not(.navbar--open) .navbar__logo-name,
+.navbar--top:not(.navbar--open) .navbar__phone,
+.navbar--top:not(.navbar--open) .navbar__toggle {
+  color: var(--color-white);
+}
+.navbar--top:not(.navbar--open) .navbar__logo-sub {
+  color: rgba(255, 255, 255, 0.55);
+}
+.navbar--top:not(.navbar--open) .navbar__links a {
+  color: rgba(255, 255, 255, 0.75);
+}
+.navbar--top:not(.navbar--open) .navbar__links a:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.08);
+}
+.navbar--top:not(.navbar--open) .navbar__toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
