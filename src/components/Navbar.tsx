@@ -51,9 +51,9 @@ export default function Navbar() {
         </ul>
 
         <div className="navbar__actions">
-          <a href="tel:0488890909" className="navbar__phone">
+          <a href="tel:0403764216" className="navbar__phone">
             <Phone size={16} />
-            <span>0488 890 909</span>
+            <span>0403 764 216</span>
           </a>
           <a href="#quote" className="btn btn-primary navbar__cta" onClick={(e) => { e.preventDefault(); handleNav('#quote'); }}>
             Get Free Quote
@@ -78,9 +78,9 @@ export default function Navbar() {
           ))}
         </ul>
         <div className="navbar__mobile-actions">
-          <a href="tel:0488890909" className="navbar__phone">
+          <a href="tel:0403764216" className="navbar__phone">
             <Phone size={18} />
-            <span>0488 890 909</span>
+            <span>0403 764 216</span>
           </a>
           <a href="#quote" className="btn btn-primary" style={{ width: '100%' }} onClick={(e) => { e.preventDefault(); handleNav('#quote'); }}>
             Get Free Quote

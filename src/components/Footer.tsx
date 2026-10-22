@@ -37,9 +37,9 @@ export default function Footer() {
               businesses, and strata properties since 2015.
             </p>
             <div className="footer__contact-list">
-              <a href="tel:0488890909" className="footer__contact-item">
+              <a href="tel:0403764216" className="footer__contact-item">
                 <Phone size={16} />
-                <span>0488 890 909</span>
+                <span>0403 764 216</span>
               </a>
               <a href="mailto:hao@polarispainting.com.au" className="footer__contact-item">
                 <Mail size={16} />
