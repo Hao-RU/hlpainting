@@ -5,7 +5,7 @@ import Services from './components/Services';
 import Process from './components/Process';
 import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
-import QuoteForm from './components/QuoteForm';
+import QuoteCta from './components/QuoteCta';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import RequestPage from './pages/RequestPage';
@@ -30,7 +30,7 @@ export default function App() {
       <Process />
       <Gallery />
       <Testimonials />
-      <QuoteForm />
+      <QuoteCta />
       <FAQ />
       <Footer />
     </>

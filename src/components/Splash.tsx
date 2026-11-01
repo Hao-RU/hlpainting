@@ -29,9 +29,8 @@ export default function Splash() {
         <p className="splash__slogan">{SLOGAN}</p>
 
         <a
-          href="#quote"
+          href="/get-a-quote"
           className="btn btn-primary splash__cta"
-          onClick={(e) => { e.preventDefault(); scrollTo('#quote'); }}
         >
           Get Your Free Quote
         </a>

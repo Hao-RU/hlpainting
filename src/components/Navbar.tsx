@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import './Navbar.css';
 import logo from '../assets/polaris-google-profile-logo.jpg';
-import { QUOTE_PAGE, CALLBACK_PAGE, goToSection, isRequestPage } from '../lib/site';
+import { QUOTE_PAGE, goToSection, isRequestPage } from '../lib/site';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,9 +56,6 @@ export default function Navbar() {
             <Phone size={16} />
             <span>0403 764 216</span>
           </a>
-          <a href={CALLBACK_PAGE} className="navbar__callback">
-            Call me back
-          </a>
           <a href={QUOTE_PAGE} className="btn btn-primary navbar__cta">
             Get Free Quote
           </a>
@@ -88,9 +85,6 @@ export default function Navbar() {
           </a>
           <a href={QUOTE_PAGE} className="btn btn-primary" style={{ width: '100%' }}>
             Get Free Quote
-          </a>
-          <a href={CALLBACK_PAGE} className="btn btn-outline" style={{ width: '100%' }}>
-            Request a call back
           </a>
         </div>
       </div>

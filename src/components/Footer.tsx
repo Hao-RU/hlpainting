@@ -87,7 +87,6 @@ export default function Footer() {
                 { label: 'Testimonials', href: '#testimonials' },
                 { label: 'FAQ', href: '#faq' },
                 { label: 'Get Free Quote', href: '/get-a-quote' },
-                { label: 'Request a Call Back', href: '/call-back' },
               ].map(l => (
                 <li key={l.label}>
                   <a href={l.href} onClick={(e) => { if (l.href.startsWith('#')) { e.preventDefault(); goToSection(l.href); } }}>{l.label}</a>

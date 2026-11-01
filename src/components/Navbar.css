@@ -189,7 +189,6 @@
 /* Over the navy opening screen: light text until the user scrolls */
 .navbar--top:not(.navbar--open) .navbar__logo-name,
 .navbar--top:not(.navbar--open) .navbar__phone,
-.navbar--top:not(.navbar--open) .navbar__callback,
 .navbar--top:not(.navbar--open) .navbar__toggle {
   color: var(--color-white);
 }
@@ -205,26 +204,4 @@
 }
 .navbar--top:not(.navbar--open) .navbar__toggle:hover {
   background: rgba(255, 255, 255, 0.08);
-}
-
-/* "Call me back" beside the quote button */
-.navbar__callback {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-heading);
-  padding: 0.5rem 0.25rem;
-  white-space: nowrap;
-  opacity: 0.9;
-  transition: opacity var(--transition-fast), color var(--transition-fast);
-}
-
-.navbar__callback:hover {
-  opacity: 1;
-  color: var(--color-accent);
-}
-
-@media (max-width: 1100px) {
-  .navbar__callback {
-    display: none;
-  }
 }

@@ -58,7 +58,7 @@ export default function FAQ() {
               Everything you need to know before getting started. Can't find your answer? Reach out directly.
             </p>
             <a href="#quote" className="btn btn-primary faq__cta" onClick={(e) => { e.preventDefault(); document.querySelector('#quote')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              Ask Us Anything
+              Call or Get a Quote
             </a>
           </div>
 
