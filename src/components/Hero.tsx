@@ -31,7 +31,7 @@ export default function Hero() {
           </p>
 
           <div className="hero__actions">
-            <a href="#quote" className="btn btn-primary btn--lg" onClick={(e) => { e.preventDefault(); document.querySelector('#quote')?.scrollIntoView({ behavior: 'smooth' }); }}>
+            <a href="/get-a-quote" className="btn btn-primary btn--lg">
               Get Your Free Quote
               <ArrowRight size={18} />
             </a>

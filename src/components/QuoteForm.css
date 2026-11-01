@@ -183,3 +183,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+.quote__callback-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

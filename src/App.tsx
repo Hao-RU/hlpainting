@@ -8,8 +8,19 @@ import Testimonials from './components/Testimonials';
 import QuoteForm from './components/QuoteForm';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import RequestPage from './pages/RequestPage';
+import { isRequestPage } from './lib/site';
 
 export default function App() {
+  if (isRequestPage()) {
+    return (
+      <>
+        <Navbar />
+        <RequestPage />
+        <Footer />
+      </>
+    );
+  }
   return (
     <>
       <Navbar />

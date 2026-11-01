@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import './Navbar.css';
 import logo from '../assets/polaris-google-profile-logo.jpg';
+import { QUOTE_PAGE, CALLBACK_PAGE, goToSection, isRequestPage } from '../lib/site';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,13 +29,13 @@ export default function Navbar() {
 
   const handleNav = (href: string) => {
     setMobileOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    goToSection(href);
   };
 
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : 'navbar--top'} ${mobileOpen ? 'navbar--open' : ''}`}>
       <div className="navbar__inner container">
-        <a href="#" className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <a href="/" className="navbar__logo" onClick={(e) => { if (!isRequestPage()) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
           <img src={logo} alt="Polaris Painting & Decorating" className="navbar__logo-img" />
           <div className="navbar__logo-text">
             <span className="navbar__logo-name">Polaris Painting & Decorating</span>
@@ -55,7 +56,10 @@ export default function Navbar() {
             <Phone size={16} />
             <span>0403 764 216</span>
           </a>
-          <a href="#quote" className="btn btn-primary navbar__cta" onClick={(e) => { e.preventDefault(); handleNav('#quote'); }}>
+          <a href={CALLBACK_PAGE} className="navbar__callback">
+            Call me back
+          </a>
+          <a href={QUOTE_PAGE} className="btn btn-primary navbar__cta">
             Get Free Quote
           </a>
         </div>
@@ -82,8 +86,11 @@ export default function Navbar() {
             <Phone size={18} />
             <span>0403 764 216</span>
           </a>
-          <a href="#quote" className="btn btn-primary" style={{ width: '100%' }} onClick={(e) => { e.preventDefault(); handleNav('#quote'); }}>
+          <a href={QUOTE_PAGE} className="btn btn-primary" style={{ width: '100%' }}>
             Get Free Quote
+          </a>
+          <a href={CALLBACK_PAGE} className="btn btn-outline" style={{ width: '100%' }}>
+            Request a call back
           </a>
         </div>
       </div>

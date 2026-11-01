@@ -1,5 +1,6 @@
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 import './Footer.css';
+import { goToSection } from '../lib/site';
 import logo from '../assets/polaris-google-profile-logo.jpg';
 
 export default function Footer() {
@@ -61,7 +62,7 @@ export default function Footer() {
             <ul>
               {serviceLinks.map(s => (
                 <li key={s}>
-                  <a href="#services" onClick={(e) => { e.preventDefault(); document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' }); }}>{s}</a>
+                  <a href="#services" onClick={(e) => { e.preventDefault(); goToSection('#services'); }}>{s}</a>
                 </li>
               ))}
             </ul>
@@ -71,7 +72,7 @@ export default function Footer() {
             <h4>Service Areas</h4>
             <ul>
               {areaLinks.map(a => (
-                <li key={a}><a href="#quote" onClick={(e) => { e.preventDefault(); document.querySelector('#quote')?.scrollIntoView({ behavior: 'smooth' }); }}>{a}</a></li>
+                <li key={a}><a href="/get-a-quote">{a}</a></li>
               ))}
             </ul>
           </div>
@@ -85,10 +86,11 @@ export default function Footer() {
                 { label: 'Project Gallery', href: '#gallery' },
                 { label: 'Testimonials', href: '#testimonials' },
                 { label: 'FAQ', href: '#faq' },
-                { label: 'Get Free Quote', href: '#quote' },
+                { label: 'Get Free Quote', href: '/get-a-quote' },
+                { label: 'Request a Call Back', href: '/call-back' },
               ].map(l => (
                 <li key={l.label}>
-                  <a href={l.href} onClick={(e) => { e.preventDefault(); document.querySelector(l.href)?.scrollIntoView({ behavior: 'smooth' }); }}>{l.label}</a>
+                  <a href={l.href} onClick={(e) => { if (l.href.startsWith('#')) { e.preventDefault(); goToSection(l.href); } }}>{l.label}</a>
                 </li>
               ))}
             </ul>

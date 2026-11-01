@@ -47,6 +47,7 @@ export default function QuoteForm() {
         body: new URLSearchParams({
           'form-name': FORM_NAME,
           'bot-field': botField,
+          request: 'Quote',
           ...formData,
         }).toString(),
       });
@@ -89,6 +90,7 @@ export default function QuoteForm() {
             </div>
 
             <div className="quote__contact-info">
+              <p>Rather we rang you? <a href="/call-back" className="quote__callback-link">Request a call back</a></p>
               <p>Prefer to call?</p>
               <a href="tel:0403764216" className="quote__phone">0403 764 216</a>
             </div>

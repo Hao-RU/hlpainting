@@ -69,7 +69,7 @@ export default function Services() {
                   <li key={f}>{f}</li>
                 ))}
               </ul>
-              <a href="#quote" className="service-card__link" onClick={(e) => { e.preventDefault(); document.querySelector('#quote')?.scrollIntoView({ behavior: 'smooth' }); }}>
+              <a href="/get-a-quote" className="service-card__link">
                 Get a Quote <ArrowUpRight size={16} />
               </a>
             </div>
