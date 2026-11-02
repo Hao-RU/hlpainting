@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { CheckCircle, Send, Phone, Clock, ShieldCheck, Palette } from 'lucide-react';
-import { THANKS_PAGE, isThanksPage, sendRequest, tidyOldPath, track } from '../lib/site';
+import { THANKS_PAGE, isThanksPage, sendRequest, tidyOldPath, track, trackPageChange } from '../lib/site';
 import '../components/QuoteForm.css';
 import './RequestPage.css';
 
@@ -73,6 +73,8 @@ export default function RequestPage() {
       // A real address for the thank-you, so Google Ads can count it
       window.history.pushState(null, '', THANKS_PAGE);
       setDone(true);
+      document.title = 'Thank You | Polaris Painting & Decorating Sydney';
+      trackPageChange();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch {
       setError('Something went wrong sending that. Please try again, or call 0403 764 216.');

@@ -50,13 +50,14 @@ export async function sendRequest(fields: Record<string, string>, botField: stri
   if (!res.ok) throw new Error(`Form submission failed: ${res.status}`);
 }
 
-// Measuring enquiries (Google Ads / Analytics). Events always go on the
-// dataLayer; when a Google tag ID is set at build time (VITE_GOOGLE_TAG_ID,
-// e.g. AW-123456789) the tag is loaded and the events reach Google. Each
-// conversion's "send_to" (AW-123456789/AbCdEf...) can be set too, so Ads
-// counts them directly:
-//   VITE_GADS_QUOTE_SEND_TO  - a quote request sent
-//   VITE_GADS_CALL_SEND_TO   - a tap on the phone number
+// Measuring visits and enquiries: Google Analytics 4 and Google Ads.
+// The IDs are set as Netlify environment variables and read at build time,
+// so turning either on is a Netlify setting and a redeploy, not a code change:
+//   VITE_GA_ID              - Analytics measurement ID, G-XXXXXXXXXX
+//   VITE_GOOGLE_ADS_ID      - Google Ads tag ID, AW-123456789
+//   VITE_GADS_QUOTE_SEND_TO - optional, the quote conversion's AW-.../label
+//   VITE_GADS_CALL_SEND_TO  - optional, the phone tap conversion's AW-.../label
+// Events always go on the dataLayer, so they are there for Tag Manager too.
 type Gtag = (...args: unknown[]) => void;
 declare global {
   interface Window {
@@ -65,10 +66,13 @@ declare global {
   }
 }
 
-const TAG_ID = import.meta.env.VITE_GOOGLE_TAG_ID as string | undefined;
+const env = (v: unknown): string | undefined => (typeof v === 'string' && v.trim() !== '' ? v.trim() : undefined);
+const GA_ID = env(import.meta.env.VITE_GA_ID);
+// VITE_GOOGLE_TAG_ID was the first name for the Ads ID; still honoured
+const ADS_ID = env(import.meta.env.VITE_GOOGLE_ADS_ID) ?? env(import.meta.env.VITE_GOOGLE_TAG_ID);
 const SEND_TO: Record<string, string | undefined> = {
-  quote_request: import.meta.env.VITE_GADS_QUOTE_SEND_TO as string | undefined,
-  phone_call: import.meta.env.VITE_GADS_CALL_SEND_TO as string | undefined,
+  quote_request: env(import.meta.env.VITE_GADS_QUOTE_SEND_TO),
+  phone_call: env(import.meta.env.VITE_GADS_CALL_SEND_TO),
 };
 
 export function startTracking(): void {
@@ -78,13 +82,14 @@ export function startTracking(): void {
     // eslint-disable-next-line prefer-rest-params
     window.dataLayer!.push(arguments);
   };
-  if (TAG_ID) {
+  const ids = [GA_ID, ADS_ID].filter((x): x is string => x !== undefined);
+  if (ids.length > 0) {
     const s = document.createElement('script');
     s.async = true;
-    s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(TAG_ID)}`;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ids[0])}`;
     document.head.appendChild(s);
     window.gtag('js', new Date());
-    window.gtag('config', TAG_ID);
+    for (const id of ids) window.gtag('config', id);
   }
   // Every phone link on the site counts as a call, wherever it is.
   document.addEventListener('click', (e) => {
@@ -94,7 +99,15 @@ export function startTracking(): void {
 }
 
 export function track(event: 'quote_request' | 'phone_call', params: Record<string, string> = {}): void {
+  // GA4 names: generate_lead is Google's recommended lead event
   window.gtag?.('event', event === 'quote_request' ? 'generate_lead' : 'phone_call_click', { ...params, method: event });
   const to = SEND_TO[event];
   if (to) window.gtag?.('event', 'conversion', { send_to: to });
+}
+
+/** The thank-you page arrives without a page load. Analytics sees the
+ *  address change on its own; Ads needs telling, so a "page URL contains
+ *  /thank-you" conversion counts. */
+export function trackPageChange(): void {
+  if (ADS_ID) window.gtag?.('event', 'page_view', { send_to: ADS_ID, page_location: window.location.href, page_title: document.title });
 }
