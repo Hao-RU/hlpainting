@@ -12,7 +12,6 @@ export default function Footer() {
     'Strata Unit Painting',
     'Roof Painting',
     'Garage Painting',
-    'Epoxy Flooring',
   ];
 
   const areaLinks = [

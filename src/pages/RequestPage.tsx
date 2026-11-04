@@ -10,7 +10,6 @@ const SERVICES = [
   'Strata Unit Painting',
   'Roof Painting',
   'Garage Painting',
-  'Epoxy Flooring',
   'Not sure yet',
 ];
 

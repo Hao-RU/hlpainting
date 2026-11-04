@@ -1,4 +1,4 @@
-import { Home, Building2, Layers, Paintbrush, Warehouse, Hexagon, ArrowUpRight } from 'lucide-react';
+import { Home, Building2, Layers, Paintbrush, Warehouse, MessageCircleQuestionMark, ArrowUpRight } from 'lucide-react';
 import './Services.css';
 import PaintChip from './PaintChip';
 import { WALLS } from '../paintColours';
@@ -35,10 +35,10 @@ const services = [
     features: ['Walls & Trims', 'Door Finishes', 'Durable Coatings'],
   },
   {
-    icon: Hexagon,
-    title: 'Epoxy Flooring',
-    description: 'Industrial-strength floors for garages and workspaces. Seamless, easy to clean, and built to handle heavy traffic.',
-    features: ['Seamless Finish', 'Chemical Resistant', 'Custom Colours'],
+    icon: MessageCircleQuestionMark,
+    title: 'Not Sure What You Need?',
+    description: 'Tell us about the job and we will let you know honestly whether it is work we do, and how we would approach it.',
+    features: ['Free Advice', 'Straight Answers', 'No Obligation'],
   },
 ];
 
