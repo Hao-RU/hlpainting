@@ -9,9 +9,21 @@ import QuoteCta from './components/QuoteCta';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import RequestPage from './pages/RequestPage';
-import { isRequestPage } from './lib/site';
+import { AreasPage, SuburbPage } from './pages/AreaPages';
+import { currentPath, isRequestPage } from './lib/site';
+import { areaPageFor } from './lib/suburbs';
 
 export default function App() {
+  const area = areaPageFor(currentPath());
+  if (area) {
+    return (
+      <>
+        <Navbar />
+        {area.kind === 'areas' ? <AreasPage /> : <SuburbPage suburb={area.suburb} />}
+        <Footer />
+      </>
+    );
+  }
   if (isRequestPage()) {
     return (
       <>

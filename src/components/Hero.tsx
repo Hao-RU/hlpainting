@@ -1,4 +1,4 @@
-import { ArrowRight, Star, Shield, Clock, Award } from 'lucide-react';
+import { ArrowRight, Star, Shield, Clock, Award, UserRound } from 'lucide-react';
 import './Hero.css';
 import heroImg from '../assets/Frontpage.png';
 import PaintChip from './PaintChip';
@@ -42,16 +42,16 @@ export default function Hero() {
 
           <div className="hero__trust">
             <div className="hero__trust-item">
-              <Shield size={18} />
-              <span>Licensed & Insured</span>
+              <Award size={18} />
+              <span>5-Year Workmanship Warranty</span>
             </div>
             <div className="hero__trust-item">
               <Clock size={18} />
               <span>On-Time Guarantee</span>
             </div>
             <div className="hero__trust-item">
-              <Award size={18} />
-              <span>Workmanship Warranty</span>
+              <UserRound size={18} />
+              <span>Owner on Every Job</span>
             </div>
           </div>
         </div>
@@ -65,8 +65,8 @@ export default function Hero() {
               <Shield size={20} />
             </div>
             <div>
-              <span className="hero__floating-title">100% Satisfaction</span>
-              <span className="hero__floating-sub">Guaranteed or we fix it free</span>
+              <span className="hero__floating-title">5-Year Warranty</span>
+              <span className="hero__floating-sub">On our workmanship, in writing</span>
             </div>
           </div>
         </div>

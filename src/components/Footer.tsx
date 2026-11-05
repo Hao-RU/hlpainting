@@ -1,6 +1,7 @@
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 import './Footer.css';
 import { goToSection } from '../lib/site';
+import { AREAS_PAGE, suburbBySlug, suburbPath } from '../lib/suburbs';
 import logo from '../assets/polaris-google-profile-logo.jpg';
 
 export default function Footer() {
@@ -15,10 +16,9 @@ export default function Footer() {
   ];
 
   const areaLinks = [
-    'Chatswood', 'Pymble', 'Hornsby', 'Wahroonga',
-    'North Shore', 'Castle Hill', 'Parramatta', 'Bondi Junction',
-    'Strathfield', 'Sutherland Shire', 'Central Coast',
-  ];
+    'macquarie-park', 'north-ryde', 'chatswood', 'lane-cove', 'hunters-hill', 'epping',
+    'lindfield', 'killara', 'pymble', 'st-ives', 'wahroonga',
+  ].map(suburbBySlug).filter(s => s !== undefined);
 
   return (
     <footer className="footer">
@@ -51,7 +51,7 @@ export default function Footer() {
               </div>
               <div className="footer__contact-item">
                 <MapPin size={16} />
-                <span>Sydney, NSW</span>
+                <span>Macquarie Park, NSW</span>
               </div>
             </div>
           </div>
@@ -71,8 +71,9 @@ export default function Footer() {
             <h4>Service Areas</h4>
             <ul>
               {areaLinks.map(a => (
-                <li key={a}><a href="/get-a-quote">{a}</a></li>
+                <li key={a.slug}><a href={suburbPath(a)}>{a.name}</a></li>
               ))}
+              <li><a href={AREAS_PAGE}>All areas</a></li>
             </ul>
           </div>
 

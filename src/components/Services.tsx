@@ -51,8 +51,7 @@ export default function Services() {
           <span className="section-label">What We Do</span>
           <h2 className="section-title">Painting Services Built<br />Around Your Needs</h2>
           <p className="section-subtitle">
-            From a single room refresh to a full commercial repaint, our licensed team
-            delivers precise, lasting results across every surface.
+            From a single room refresh to a full commercial repaint, we deliver precise, lasting results across every surface.
           </p>
         </div>
 

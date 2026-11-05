@@ -9,8 +9,20 @@ export const THANKS_PAGE = '/thank-you';
 const OLD_PATHS = ['/quote', '/call-back', '/callback'];
 export const REQUEST_PATHS = [QUOTE_PAGE, THANKS_PAGE, ...OLD_PATHS];
 
+// While the suburb pages are prerendered at build time there is no window,
+// so the build says which page it is drawing.
+let ssrPath: string | null = null;
+export function setSsrPath(path: string): void {
+  ssrPath = path;
+}
+
 export function currentPath(): string {
-  return window.location.pathname.replace(/\/+$/, '') || '/';
+  const raw = ssrPath ?? (typeof window === 'undefined' ? '/' : window.location.pathname);
+  return raw.replace(/\/+$/, '') || '/';
+}
+
+export function isHomePage(): boolean {
+  return currentPath() === '/';
 }
 
 export function isRequestPage(): boolean {

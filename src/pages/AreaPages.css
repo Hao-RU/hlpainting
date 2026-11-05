@@ -1,0 +1,207 @@
+/* Areas we paint, and a page for each suburb */
+.area {
+  background: var(--color-bg-warm);
+  padding-bottom: var(--section-padding);
+}
+
+.area__head {
+  background: var(--color-bg-deep);
+  color: var(--color-white);
+  padding: calc(var(--section-padding) + 3rem) 0 4.5rem;
+}
+
+.area__crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+a.area__crumb:hover { color: var(--color-white); }
+
+.area__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+  line-height: 1.12;
+  color: var(--color-white);
+  margin: 0.75rem 0 1rem;
+}
+
+.area__lead {
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.area__head-btns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 1.75rem;
+  margin-top: 2rem;
+}
+
+.area__head-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  color: var(--color-white);
+  font-weight: 600;
+  text-decoration: none;
+}
+.area__head-call:hover { color: var(--color-accent); }
+
+.area__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: 2rem;
+  margin-top: -2.25rem;
+  align-items: start;
+}
+
+.area__main {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.area__main h2,
+.area__card h2 {
+  font-family: var(--font-serif);
+  color: var(--color-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+}
+
+.area__main p {
+  color: var(--color-text);
+  line-height: 1.8;
+  max-width: 66ch;
+}
+
+.area__focus {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.area__focus li {
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-light);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.area__ask {
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 2rem;
+}
+.area__ask p { margin-bottom: 1.4rem; }
+.area__ask-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.area__side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.area__card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 1.6rem;
+}
+.area__card h2 { font-size: 1.2rem; }
+
+.area__promises {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.area__promises li {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+.area__promises svg {
+  flex: none;
+  color: var(--color-accent);
+  margin-top: 2px;
+}
+.area__promises b {
+  display: block;
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+.area__near {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.area__near a,
+.area__region a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  color: var(--color-heading);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border-light);
+  font-weight: 500;
+}
+.area__near a:hover,
+.area__region a:hover { color: var(--color-accent-hover); }
+
+.area__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  margin-top: 0.4rem;
+  color: var(--color-accent-hover);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.area__regions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 2.25rem;
+}
+.area__region h2 { font-size: 1.2rem; }
+.area__region ul { list-style: none; }
+.area__region a svg { color: var(--color-text-muted); }
+
+.area__else { color: var(--color-text-light); }
+
+@media (max-width: 860px) {
+  .area__body { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .area__regions { grid-template-columns: 1fr; }
+  .area__ask-btns .btn { width: 100%; }
+}

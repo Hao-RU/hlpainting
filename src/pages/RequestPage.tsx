@@ -181,7 +181,7 @@ export default function RequestPage() {
             </ol>
           </div>
           <ul className="request__points">
-            <li><ShieldCheck size={18} /> Licensed, insured and warranty-backed</li>
+            <li><ShieldCheck size={18} /> 5-year workmanship warranty</li>
             <li><Palette size={18} /> Free colour consultation</li>
             <li><Clock size={18} /> On time, every time</li>
           </ul>

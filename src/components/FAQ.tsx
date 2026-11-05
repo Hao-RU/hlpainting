@@ -7,7 +7,7 @@ import { WALLS } from '../paintColours';
 const faqs = [
   {
     q: 'Which areas in Sydney do you service?',
-    a: 'We service across Sydney and nearby areas including Chatswood, Pymble, Hornsby, Wahroonga, the North Shore, Castle Hill, Parramatta, Bondi Junction, Strathfield, Sutherland Shire, Gosford, and the wider Central Coast.',
+    a: 'We are based in Macquarie Park and work mostly close to home: Ryde, North Ryde, Eastwood, Epping, Beecroft and Pennant Hills, Chatswood, Lane Cove and Hunters Hill, and the Upper North Shore from Roseville to Wahroonga. Further afield, just ask.',
   },
   {
     q: 'Can you paint while my business stays open?',
@@ -34,8 +34,8 @@ const faqs = [
     a: 'Our quotes are fully itemised and cover surface preparation, materials, labour, and clean-up. There are no hidden fees. We also include an estimated timeline and warranty details.',
   },
   {
-    q: 'Are you licensed and insured?',
-    a: 'Yes. We are fully licensed, carry comprehensive public liability insurance, and provide a written workmanship warranty on every project for your peace of mind.',
+    q: 'Is the work guaranteed?',
+    a: 'Yes. Every job comes with a 5-year workmanship warranty in writing. If something we did fails because of how we did it, such as peeling or flaking from poor preparation, we come back and fix it at no charge.',
   },
 ];
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import './Navbar.css';
 import logo from '../assets/polaris-google-profile-logo.jpg';
-import { QUOTE_PAGE, goToSection, isRequestPage } from '../lib/site';
+import { QUOTE_PAGE, goToSection, isHomePage } from '../lib/site';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : 'navbar--top'} ${mobileOpen ? 'navbar--open' : ''}`}>
       <div className="navbar__inner container">
-        <a href="/" className="navbar__logo" onClick={(e) => { if (!isRequestPage()) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
+        <a href="/" className="navbar__logo" onClick={(e) => { if (isHomePage()) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
           <img src={logo} alt="Polaris Painting & Decorating" className="navbar__logo-img" />
           <div className="navbar__logo-text">
             <span className="navbar__logo-name">Polaris Painting & Decorating</span>

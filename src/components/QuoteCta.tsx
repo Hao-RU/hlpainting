@@ -28,7 +28,7 @@ export default function QuoteCta() {
               {[
                 'Free colour consultation included',
                 'No hidden fees or surprise charges',
-                'Licensed, insured & warranty-backed',
+                '5-year workmanship warranty, in writing',
                 'Flexible scheduling around your needs',
               ].map(b => (
                 <div key={b} className="quote__benefit">
